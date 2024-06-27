@@ -1,0 +1,27 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: #200;;
+    /* background-color: #620; */
+    /* color:#996600; */
+}
+
+.bank{
+    gap: 3px;
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
+
+.dot{
+    width: 3px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: red;
+    opacity: 0.33;
+}
+
+.dot.on{
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}

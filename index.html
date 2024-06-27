@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BV</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    BV
+    <div id="target"></div>
+</body>
+<script>
+    class LED {
+        static toggle(e){
+            e.classList.toggle("on");
+        }
+        static d(className = "dot", content="") {
+            return `<div onclick="LED.toggle(this)" class="${className}">${content}</div>`;
+        }
+        static nibble() {
+            return this.d("bank", "....".split('').map(e => this.d()).join(''));
+        }
+        static byte() {
+            return this.d("bank", `${this.nibble()}${this.nibble()}`);
+        }
+    }
+    debugger
+    target.innerHTML = LED.byte();
+
+</script>
+
+</html>
