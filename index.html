@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 
-<body>
-    BV
-    <div id="target"></div>
-</body>
+<body><div id="target"></div></body>
 <script>
     class LED {
         static toggle(e){
@@ -26,9 +23,11 @@
         static byte() {
             return this.d("bank", `${this.nibble()}${this.nibble()}`);
         }
+        static bank() {
+            return  LED.byte() +  LED.byte()+ LED.byte()+ LED.byte();
+        }
     }
-    debugger
-    target.innerHTML = LED.byte();
+    target.innerHTML += LED.bank() + LED.bank();
 
 </script>
 
